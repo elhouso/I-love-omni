@@ -1,183 +1,149 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html data-bs-theme="dark">
-
 <head>
     <title>Omni World - Home</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to Omni World - a Minecraft server about civilisation and nation building. Play today!">
     <meta name="keywords" content="Minecraft, Australian Minecraft Server, Budgie Network, BudgieNet">
-
     <link href="common.css" rel="stylesheet">
     <link href="npm/bootstrap%405.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <script type="text/javascript" src="copyip.js"></script>
+    <script src="copyip.js"></script>
     <script src="npm/bootstrap%405.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
     <link href="home.css" rel="stylesheet">
 </head>
-
 <body>
-    <!-- 1 Header Start -->
-    <div class="header">
+    <!-- Header -->
+    <header class="header">
         <div class="header-content container-fluid">
             <div class="row justify-content-between">
                 <div class="header-logo col" media="(max-width: 600px)">
                     <div>
-                        <img src="img/logo.png">
-                        <br><span class="fs-2">A Goated Minecraft Server</span>
-                        <br>
+                        <img src="img/logo.png" alt="Omni World Logo">
+                        <span class="fs-2">A Goated Minecraft Server</span>
                     </div>
                     <div>
-                        <div class="copyip btn btn-light" onclick="copyip(this)"><input value="OmWrld.com" readonly=""><span>Copy IP</span></div>
+                        <div class="copyip btn btn-light" onclick="copyip(this)">
+                            <input value="OmWrld.com" readonly>
+                            <span>Copy IP</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- 1 Header End -->
-    <!-- 2 Navbar Start -->
+    </header>
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <!-- Container wrapper -->
         <div class="container-fluid">
-            <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
-            <!-- Collapsible wrapper -->
             <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
-                <!-- Left links -->
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-item nav-link nav-active" href="index.htm">Home</a>
+                        <a class="nav-link nav-active" href="index.htm">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="commands.html">Wiki</a>
+                        <a class="nav-link" href="commands.html">Wiki</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="rules.html">Map</a>
-                    </li>
+                        <a class="nav-link" href="rules.html">Map</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- 2 Navbar End -->
-    
-    
-    <!-- 3 Content Start -->
-    
-    
-    <div class="container content">
-        <div class="d-flex justify-content-center">
-            <span style="text-align:center;padding-top: 40px;">
-                <br>
-                <h5>Welcome to Omni World - a Minecraft server focused on nation building and civilisation.</h5>
-                <h5>Play today!</h5>
-                <br>
-            </span>
-        </div>
-        <!-- SURVIVAL -->
-        <div class="survival-header section-header pickgradient"><img class="gamemode-header" src="img/survival.png"></div>
-        <div class="content-block content-survival d-flex justify-content-start row">
-            <br>
-            <div class="col" style="padding-right:30px">
-                <h2 style="color:greenyellow">Start your adventure!</h2>
-                <p>Whether you join a town, or create your own, you will always enjoy it.</p>
-                Special features:
-                <ul>
-                    <li>
-                        Custom Mobs
-                    </li>
-                    <li>
-                        Custom Items
-                    </li>
-                    <li>
-                        Towny
-                    </li>
-                    <li>
-                        Idfk
-                    </li>
-                    <li>
-                        You tell me (fix this Azub!!! idk what to put here)
-                    </li>
-                </ul>
-                <br>
-                <br>
-                <h2 style="color:greenyellow">Rule your land!</h2>
-                <p>Claim land as yours and expand to infinite!</p>
-                <br>
-                <br>
-                <h2 style="color:greenyellow">Form a nation!</h2>
-                <p>You thought it ended at towns? No. You can CREATE (or join) nations!</p>
-                <p>Rule over multiple towns and create something new!</a>.</p>
+
+    <!-- Main Content -->
+    <main class="container content">
+        <section class="text-center py-4">
+            <h5>Welcome to Omni World - a Minecraft server focused on nation building and civilisation.</h5>
+            <h5>Play today!</h5>
+        </section>
+
+        <!-- Survival Section -->
+        <section>
+            <div class="survival-header section-header pickgradient">
+                <img class="gamemode-header" src="img/survival.png" alt="Survival Mode">
             </div>
-            <!-- Carousel -->
-            <div class="col">
-                <div id="survival-carousel" class="carousel slide" data-bs-ride="carousel">
-                    <!-- Indicators/dots -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="2"></button>
-                        <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="3"></button>
-                    </div>
-
-                    <!-- The slideshow/carousel -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="img/carouselimage-1.webp" alt="hey" class="d-block">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/carouselimage-2.webp" alt="how are you?" class="d-block">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/carouselimage-3.webp" alt="hope you're doing fine and dandy" class="d-block">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="img/carouselimage-4.webp" alt="i know i am." class="d-block">
-                        </div>
-                    </div>
-
-                    <!-- Left and right controls/icons -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#survival-carousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#survival-carousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
+            <div class="content-block content-survival row">
+                <div class="col-md-6">
+                    <h2 style="color:greenyellow">Start your adventure!</h2>
+                    <p>Whether you join a town, or create your own, you will always enjoy it.</p>
+                    <p>Special features:</p>
+                    <ul>
+                        <li>Custom Mobs</li>
+                        <li>Custom Items</li>
+                        <li>Towny</li>
+                        <li>Idfk</li>
+                        <li>You tell me (fix this Azub!!! idk what to put here)</li>
+                    </ul>
+                    <h2 style="color:greenyellow">Rule your land!</h2>
+                    <p>Claim land as yours and expand to infinite!</p>
+                    <h2 style="color:greenyellow">Form a nation!</h2>
+                    <p>You thought it ended at towns? No. You can CREATE (or join) nations!</p>
+                    <p>Rule over multiple towns and create something new!</p>
                 </div>
-    <!-- 3 THY CONTENT END -->
-                
-    <!-- 4 footer sturt start yes start not sturt lol -->
-    <div class="container-fluid footer">
-        <div class="container d-flex justify-content-center">
-            <div class="row">
-                <div class="col">
+                <div class="col-md-6">
+                    <div id="survival-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/carouselimage-1.webp" alt="Minecraft Screenshot 1" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/carouselimage-2.webp" alt="Minecraft Screenshot 2" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/carouselimage-3.webp" alt="Minecraft Screenshot 3" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/carouselimage-4.webp" alt="Minecraft Screenshot 4" class="d-block w-100">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#survival-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#survival-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container-fluid footer py-4">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
                     <h5>Contact Us</h5>
-                    <br><strong>Email</strong>
-                    <br><span class="email">azubguy@idkifhehasanemailforomniworldyet.com</span>
-                    <br>
-                    <br><strong>Discord</strong>
-                    <br><a href="https://discord.gg/NVrv5AT9Vk" target="_blank">discord.gg/NVrv5AT9Vk</a>
+                    <p><strong>Email</strong><br>
+                    <span class="email">azubguy@idkifhehasanemailforomniworldyet.com</span></p>
+                    <p><strong>Discord</strong><br>
+                    <a href="https://discord.gg/NVrv5AT9Vk" target="_blank">discord.gg/NVrv5AT9Vk</a></p>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <h5>Vote Sites</h5>
-                    <br><a href="https://www.planetminecraft.com/server/omniworld/" target="_blank">budgienet.com/v1</a>
+                    <p><a href="https://www.planetminecraft.com/server/omniworld/" target="_blank">budgienet.com/v1</a></p>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <h5>Server IP</h5>
-                    <br><code>OmWrld.com</code>
+                    <p><code>OmWrld.com</code></p>
                 </div>
             </div>
+            <div class="text-center mt-3">
+                <p>Copyright © Omni World 2025. All rights reserved.</p>
+            </div>
         </div>
-        <p class="container d-flex justify-content-center" style="padding-top:10px">
-            Copyright © Omni World 2025. All rights reserved.
-        </p>
-    </div>
-    <!-- 4 Footer End -->
+    </footer>
 </body>
 </html>
