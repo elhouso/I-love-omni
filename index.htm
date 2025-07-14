@@ -28,8 +28,8 @@
             border-bottom: 4px solid var(--primary);
         }
         .header-logo img {
-            height: 80px;
-            margin-bottom: 1rem;
+            height: 100px; /* Increased logo size */
+            margin-bottom: 0.5rem;
         }
         .navbar {
             background-color: var(--dark) !important;
@@ -57,17 +57,44 @@
             width: 100%;
             border-radius: 10px 10px 0 0;
         }
-        .copyip {
+        /* Redesigned IP Button */
+        .copyip-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .copyip-input {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            min-width: 120px;
+            text-align: center;
+        }
+        .copyip-btn {
             background: var(--primary) !important;
             color: white !important;
             border: none;
-            padding: 0.5rem 1.5rem;
+            padding: 10px 20px;
+            border-radius: 5px;
             font-weight: 600;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .copyip:hover {
+        .copyip-btn:hover {
             background: var(--secondary) !important;
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .copyip-btn:active {
+            transform: translateY(0);
+        }
+        .copyip-btn i {
+            font-size: 1.1rem;
         }
         .carousel-item img {
             border-radius: 8px;
@@ -104,7 +131,15 @@
             font-size: 1.5rem;
             line-height: 1;
         }
+        .tagline {
+            color: var(--accent);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin-top: -5px;
+        }
     </style>
+    <!-- Font Awesome for copy icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -112,19 +147,19 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <div class="header-logo d-flex align-items-center">
-                        <img src="img/logo.png" alt="Omni World Logo" class="me-4">
-                        <div>
-                            <h1 class="mb-0">Omni World</h1>
-                            <p class="lead mb-0">Build • Conquer • Reign</p>
-                        </div>
+                    <div class="header-logo text-center text-md-start">
+                        <img src="img/logo.png" alt="Omni World Logo">
+                        <p class="tagline mb-0">Build • Conquer • Reign</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-md-end mt-3 mt-md-0">
-                    <button class="copyip btn" onclick="copyip(this)">
-                        <input value="OmWrld.com" readonly>
-                        <span>Copy IP</span>
-                    </button>
+                    <div class="copyip-container justify-content-center justify-content-md-end">
+                        <div class="copyip-input">OmWrld.com</div>
+                        <button class="copyip-btn" onclick="copyip(this)">
+                            <i class="fas fa-copy"></i>
+                            <span>Copy</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -161,7 +196,7 @@
     <!-- Main Content -->
     <main class="container my-5">
         <section class="text-center mb-5">
-            <h2 class="display-5 mb-3">Welcome to Omni World</h2>
+            <h2 class="display-5 mb-3">Welcome to Our World</h2>
             <p class="lead">The ultimate Minecraft nation building experience</p>
         </section>
 
@@ -222,8 +257,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
-                    <h5>About Omni World</h5>
-                    <p>Established in 2023, Omni World offers a unique nation-building Minecraft experience with custom plugins and an active community.</p>
+                    <h5>About Our World</h5>
+                    <p>Established in 2023, we offer a unique nation-building Minecraft experience with custom plugins and an active community.</p>
                 </div>
                 <div class="col-md-2 mb-4 mb-md-0">
                     <h5>Quick Links</h5>
