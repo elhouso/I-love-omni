@@ -1,47 +1,143 @@
 <!DOCTYPE html>
 <html data-bs-theme="dark">
 <head>
-    <title>Omni World - Home</title>
+    <title>Omni World - Minecraft Nation Building Server</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to Omni World - a Minecraft server about civilisation and nation building. Play today!">
-    <meta name="keywords" content="Minecraft, Australian Minecraft Server, Budgie Network, BudgieNet">
-    <link href="common.css" rel="stylesheet">
-    <link href="npm/bootstrap%405.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="copyip.js"></script>
-    <script src="npm/bootstrap%405.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="home.css" rel="stylesheet">
+    <meta name="keywords" content="Minecraft, Australian Minecraft Server, Nation Building, Towny">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4e73df;
+            --secondary: #2e59a7;
+            --accent: #1cc88a;
+            --dark: #2a3042;
+            --light: #f8f9fc;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #121420;
+            color: #e0e0e0;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a2035 100%);
+            padding: 2rem 0;
+            border-bottom: 4px solid var(--primary);
+        }
+        .header-logo img {
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+        .navbar {
+            background-color: var(--dark) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .nav-link {
+            color: #d1d1d1 !important;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem !important;
+            transition: all 0.3s;
+        }
+        .nav-link:hover, .nav-active {
+            color: white !important;
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        .content-block {
+            background-color: #1a2035;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .gamemode-header {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        .copyip {
+            background: var(--primary) !important;
+            color: white !important;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .copyip:hover {
+            background: var(--secondary) !important;
+            transform: translateY(-2px);
+        }
+        .carousel-item img {
+            border-radius: 8px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #121420 100%);
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .feature-list li:before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="header-content container-fluid">
-            <div class="row justify-content-between">
-                <div class="header-logo col" media="(max-width: 600px)">
-                    <div>
-                        <img src="img/logo.png" alt="Omni World Logo">
-                        <span class="fs-2">A Goated Minecraft Server</span>
-                    </div>
-                    <div>
-                        <div class="copyip btn btn-light" onclick="copyip(this)">
-                            <input value="OmWrld.com" readonly>
-                            <span>Copy IP</span>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="header-logo d-flex align-items-center">
+                        <img src="img/logo.png" alt="Omni World Logo" class="me-4">
+                        <div>
+                            <h1 class="mb-0">Omni World</h1>
+                            <p class="lead mb-0">Build • Conquer • Reign</p>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <button class="copyip btn" onclick="copyip(this)">
+                        <input value="OmWrld.com" readonly>
+                        <span>Copy IP</span>
+                    </button>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
-                <ul class="navbar-nav mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
                         <a class="nav-link nav-active" href="index.htm">Home</a>
                     </li>
@@ -51,67 +147,68 @@
                     <li class="nav-item">
                         <a class="nav-link" href="rules.html">Map</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Forums</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Store</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
-    <main class="container content">
-        <section class="text-center py-4">
-            <h5>Welcome to Omni World - a Minecraft server focused on nation building and civilisation.</h5>
-            <h5>Play today!</h5>
+    <main class="container my-5">
+        <section class="text-center mb-5">
+            <h2 class="display-5 mb-3">Welcome to Omni World</h2>
+            <p class="lead">The ultimate Minecraft nation building experience</p>
         </section>
 
-        <!-- Survival Section -->
-        <section>
-            <div class="survival-header section-header pickgradient">
-                <img class="gamemode-header" src="img/survival.png" alt="Survival Mode">
-            </div>
-            <div class="content-block content-survival row">
-                <div class="col-md-6">
-                    <h2 style="color:greenyellow">Start your adventure!</h2>
-                    <p>Whether you join a town, or create your own, you will always enjoy it.</p>
-                    <p>Special features:</p>
-                    <ul>
-                        <li>Custom Mobs</li>
-                        <li>Custom Items</li>
-                        <li>Towny</li>
-                        <li>Idfk</li>
-                        <li>You tell me (fix this Azub!!! idk what to put here)</li>
+        <!-- Features Section -->
+        <section class="content-block">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="text-accent mb-4">Create Your Legacy</h2>
+                    <p class="mb-4">Join thousands of players in a persistent world where your decisions shape history. Build cities, form alliances, and conquer territories in our custom nation-building experience.</p>
+                    
+                    <h3 class="mt-5 mb-3">Server Features</h3>
+                    <ul class="feature-list">
+                        <li>Advanced Towny & Nation Systems</li>
+                        <li>Custom Economy & Trading</li>
+                        <li>Unique Mobs & Items</li>
+                        <li>Player-Driven Politics</li>
+                        <li>Regular Events & Wars</li>
+                        <li>Dynmap Integration</li>
                     </ul>
-                    <h2 style="color:greenyellow">Rule your land!</h2>
-                    <p>Claim land as yours and expand to infinite!</p>
-                    <h2 style="color:greenyellow">Form a nation!</h2>
-                    <p>You thought it ended at towns? No. You can CREATE (or join) nations!</p>
-                    <p>Rule over multiple towns and create something new!</p>
+                    
+                    <div class="mt-5">
+                        <h3 class="mb-3">Ready to Begin?</h3>
+                        <button class="btn btn-primary btn-lg">Join Now</button>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div id="survival-carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="col-lg-6">
+                    <div id="server-carousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="0" class="active"></button>
-                            <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="2"></button>
-                            <button type="button" data-bs-target="#survival-carousel" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#server-carousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#server-carousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#server-carousel" data-bs-slide-to="2"></button>
                         </div>
-                        <div class="carousel-inner">
+                        <div class="carousel-inner rounded">
                             <div class="carousel-item active">
-                                <img src="img/carouselimage-1.webp" alt="Minecraft Screenshot 1" class="d-block w-100">
+                                <img src="img/carouselimage-1.webp" class="d-block w-100" alt="Massive player-built city">
                             </div>
                             <div class="carousel-item">
-                                <img src="img/carouselimage-2.webp" alt="Minecraft Screenshot 2" class="d-block w-100">
+                                <img src="img/carouselimage-2.webp" class="d-block w-100" alt="Epic battles between nations">
                             </div>
                             <div class="carousel-item">
-                                <img src="img/carouselimage-3.webp" alt="Minecraft Screenshot 3" class="d-block w-100">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/carouselimage-4.webp" alt="Minecraft Screenshot 4" class="d-block w-100">
+                                <img src="img/carouselimage-3.webp" class="d-block w-100" alt="Beautiful landscapes">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#survival-carousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#server-carousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#survival-carousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#server-carousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
@@ -121,29 +218,47 @@
     </main>
 
     <!-- Footer -->
-    <footer class="container-fluid footer py-4">
+    <footer class="footer">
         <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <p><strong>Email</strong><br>
-                    <span class="email">azubguy@idkifhehasanemailforomniworldyet.com</span></p>
-                    <p><strong>Discord</strong><br>
-                    <a href="https://discord.gg/NVrv5AT9Vk" target="_blank">discord.gg/NVrv5AT9Vk</a></p>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>About Omni World</h5>
+                    <p>Established in 2023, Omni World offers a unique nation-building Minecraft experience with custom plugins and an active community.</p>
                 </div>
-                <div class="col-md-4">
-                    <h5>Vote Sites</h5>
-                    <p><a href="https://www.planetminecraft.com/server/omniworld/" target="_blank">budgienet.com/v1</a></p>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Rules</a></li>
+                        <li><a href="#">Staff</a></li>
+                        <li><a href="#">Leaderboards</a></li>
+                        <li><a href="#">Ban Appeals</a></li>
+                    </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5>Server IP</h5>
-                    <p><code>OmWrld.com</code></p>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>Connect</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://discord.gg/NVrv5AT9Vk" target="_blank">Discord</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Server Info</h5>
+                    <ul class="list-unstyled">
+                        <li>IP: <strong>OmWrld.com</strong></li>
+                        <li>Version: 1.20.x</li>
+                        <li>Online: 24/7</li>
+                    </ul>
                 </div>
             </div>
-            <div class="text-center mt-3">
-                <p>Copyright © Omni World 2025. All rights reserved.</p>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center">
+                <p class="mb-0">© 2025 Omni World. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="copyip.js"></script>
 </body>
 </html>
