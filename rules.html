@@ -1,361 +1,221 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html data-bs-theme="dark">
-
 <head>
-    <title>BudgieNet | Rules</title>
+    <title>Omni World - Live Map</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Budgie Network - a Minecraft server network owned and hosted in Australia. Play Survival, Skyblock, SkyGrid, Creative, or Vanilla game modes.">
-    <meta name="keywords" content="Minecraft, Australian Minecraft Server, Budgie Network, BudgieNet">
-    
-    <link href="common.css" rel="stylesheet">
-    <link href="npm/bootstrap%405.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <script type="text/javascript" src="copyip.js"></script>
-    <script src="npm/bootstrap%405.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <link href="home.css" rel="stylesheet">
-    
+    <meta name="description" content="Omni World Live Map - Explore the server world in real-time">
+    <meta name="keywords" content="Minecraft, Omni World, Map, Dynmap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        .nav-tabs .nav-link {
-            font-size:larger;
+        :root {
+            --primary: #4e73df;
+            --primary-dark: #3a5bc7;
+            --accent: #4e73df;
+            --dark: #1a2035;
+            --darker: #121420;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--darker);
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background: var(--dark);
+            padding: 2rem 0;
+            border-bottom: 4px solid var(--primary);
+        }
+        .header-logo {
+            text-align: center;
+        }
+        .header-logo img {
+            height: 100px;
+            margin-bottom: 0.5rem;
+        }
+        .navbar {
+            background-color: var(--dark) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .navbar-nav {
+            flex-direction: row;
+            gap: 0.5rem;
+        }
+        .nav-link {
+            color: #d1d1d1 !important;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem !important;
+            transition: all 0.3s;
+        }
+        .nav-link:hover, .nav-active {
+            color: white !important;
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        /* Map Container Styles */
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding-top: 100%; /* Creates a square aspect ratio */
+        }
+        
+        .map-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .map-button {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+        
+        .footer {
+            background: var(--dark);
+            padding: 3rem 0 1rem;
+            border-top: 4px solid var(--primary);
+            text-align: center;
+        }
+        
+        .tagline {
+            color: var(--primary);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin-top: -5px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .nav-link {
+                padding: 0.5rem 1rem !important;
+            }
+            
+            .map-container {
+                padding-top: 100%; /* Maintain square on mobile */
+            }
         }
     </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <!-- 1 Header Start -->
-    <div class="header">
-        <div class="header-content container-fluid">
-            <div class="row justify-content-between">
-                <div class="header-count col-2">
-                    <span style="font-size:18pt">Playing Now</span>
-                    <br><span style="display:block;margin-top: -10px;font-size:26pt;color:greenyellow" data-playercounter-ip="budgie.network">0</span>
-                </div>
-                <div class="header-logo col" media="(max-width: 600px)">
-                    <div>
-                        <img src="img/logo.png">
-                        <br><span class="fs-2">Australian Minecraft Network</span>
-                        <br>
-                    </div>
-                    <div>
-                        <div class="copyip btn btn-light" onclick="copyip(this)"><input value="budgie.network" readonly=""><span>Copy IP</span></div>
-                    </div>
-                </div>
-                <div class="header-online col-2" media="(max-width: 600px)">
-                    <span style="font-size:18pt">Server Status</span>
-                    <br><span style="display:block;margin-top: -10px;font-size:26pt;text-transform: capitalize;color:greenyellow" data-playercounter-ip="budgie.network" data-playercounter-status=""></span>
-                </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-logo">
+                <img src="img/logo.png" alt="Omni World Logo">
+                <p class="tagline mb-0">Build • Conquer • Reign</p>
             </div>
         </div>
-    </div>
-    <!-- 1 Header End -->
-    <!-- 2 Navbar Start -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-            <!-- Toggle button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
-            <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
-                <!-- Left links -->
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-item nav-link" href="index.htm">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-item nav-link" href="commands.html">Commands</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-item nav-link nav-active" href="rules.html">Rules</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-item nav-link" href="https://shop.budgienet.com/" target="_blank">Store</a>
-                    </li>
-                </ul>
+            <div class="collapse navbar-collapse" id="navbar">
+                <div class="nav-container">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.htm">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="commands.html">Wiki</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-active" href="map.html">Map</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
-    <!-- 2 Navbar End -->
-    
-    
-    <!-- 3 Content Start -->
-    <div class="container content" style="padding:40px !important">
-        <h1>Server Rules</h1>
-        <br>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="survival-tab" data-bs-toggle="tab" data-bs-target="#survival" type="button" role="tab" aria-controls="survival" aria-selected="true">Survival / Skyblock / SkyGrid / Creative</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="vanilla-tab" data-bs-toggle="tab" data-bs-target="#vanilla" type="button" role="tab" aria-controls="vanilla" aria-selected="false">Vanilla</button>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <!-- ################################################ -->
-            <!-- RULES START -->
-            <!-- ################################################ -->
-            <div class="tab-pane fade show active" id="survival" role="tabpanel" aria-labelledby="survival-tab">
-                <br>
-                <br>
-                <h2>1. No using hacks or modded clients</h2>
-                <hr>
-                <p>
-                    Do not use any hacks, injection scripts or modified game clients that provides you with any sort of
-                    utility or advantage. This includes any "utility" clients, mods, or any texture pack that provides extra sensory perception. (esp or xray)
-                </p>
-                <p>Exceptions to this rule are:</p>
-                <ul>
-                    <li>Clients which optimize the game but do not provide any gameplay advantage such as:</li>
-                    <ul>
-                        <li>Optifine, Badlion, Lunar Client</li>
-                    </ul>
-                    <li>Optimization mods such as:</li>
-                    <ul>
-                        <li>Sodium, Iridium, Lithium, EntityCulling</li>
-                    </ul>
-                    <li>Schematic mods for visual reference only:</li>
-                    <ul>
-                        <li>Schematica, Litematica</li>
-                        <li><strong>Easy place & Pick block is not allowed</strong>.</li>
-                    </ul>
-                    <li>Cosmetic mods stuch as:</li>
-                    <ul>
-                        <li>Capes, Distant Horizons, Entity Models, Iris / Shaders</li>
-                    </ul>
-                    <li>GUI mods such as:</li>
-                    <ul>
-                        <li>Minimaps, Waypoints, Inventory managers</li>
-                    </ul>
-                    <li>Ask us if you are unsure.</li>
-                </ul>
-                <p>Using any mod (e.g. minimap, litematica) to assist with mining will be considered xray.</p>
-                <br>
-                <h3>1.1. Use of automation software</h3>
-                <p style="color:greenyellow">What is allowed:</p>
-                <ul>
-                    <li>Third party software to simulate button presses is allowed. I.e. AutoHotkey, AutoIt.</li>
-                    <li>AFK fishing contraptions and taping down your left mouse button.</li>
-                </ul>
-                <p style="color:red">What is not allowed:</p>
-                <ul>
-                    <li>Any mod or third party software or hardware that manipulates mouse movement.</li>
-                    <li>Altering the games code in any capacity order to automate actions. I.e. Modded autoclickers are not allowed - separate programs that do mouse presses are allowed.</li>
-                    <li>Injecting code into the game at runtime. I.e. injection scripts.</li>
-                </ul>
-                <br>
-                <br>
-                <h2>2. No spamming or advertising</h2>
-                <hr>
-                <p>"Spam" includes repeated messages, messages sent in rapid succession with no inherent value, and
-                    messages that are nonsensical.</p>
-                <p>"Advertisement" is any reference to a third party product or service with any intent of providing
-                    said product or service with exposure.</p>
-                Advertisement Exception:
-                <ul>
-                    <li>Self promotion of a media channel.</li>
-                </ul>
-                <br>
-                <br>
-                <h2>3. No excessively harassing other players</h2>
-                <hr>
-                <p>Swearing is fine, banter is encouraged. But if you act with the sole intention of negatively
-                    impacting another players experience in any significant capacity, verbally or otherwise, it will be
-                    considered harassment.</p>
-                <br>
-                <br>
-                <h2>3.1. Do not share private information</h2>
-                <p>Players should remain anonymous unless they state otherwise. Do not share any personal identifiable
-                    information about a specific individual, doing is not only a dick move, but it can potentially
-                    violate privacy laws.</p>
-                <br>
-                <br>
-                <h2>4. No griefing or stealing on or around claimed land</h2>
-                <hr>
-                <h4>Griefing</h4>
-                <p>Do not grief other players on or within a reasonably close distance to their claimed land, regardless
-                    of trust status.</p>
-                <ul>
-                    <li>"Griefing" in this context means killing, stealing, breaking, placing, claiming, or altering the
-                        environment.</li>
-                    <li>"Reasonably close" means that it is a clear and obvious extension of their build or settlement. 
-                        <br>This can apply up to 50 blocks from the claim for servers that use land claims.</li>
-                </ul>
-                <p>On <strong>Skyblock</strong> this applies to any island, friendly or otherwise.</p>
-                <p>On <strong>Creative</strong> this applies to any plot of land, regardless of trust status.</p>
-                <h4>Claiming</h4>
-                <p>Claiming land within 50 blocks of an existing claim will be considered griefing if the existing
-                    claimant does not sanction it. Sanctions cannot be revoked.</p>
-                <p>Additionally if the claim was made with the purpose to impede base expansion, regardless of distance, it will be considered griefing.</p>
-                <h4>Scamming</h4>
-                <p>Scamming is not considered griefing. We will only take action if real world currency is involved, or
-                    if it violates any other rule.</p>
-                <h4>TP Killing</h4>
-                <p>Teleporting to another player or having a player teleport to you for the purpose of killing them,
-                    regardless of claims, will be considered griefing.</p>
-                <br>
-                <br>
-                <h2>5. No abusing exploits or glitches</h2>
-                <hr>
-                <h4>Exploits</h4>
-                <p>
-                    Do not make use of exploits or glitches. Anything that is an unintended feature of the game, or
-                    design flaw within the server should not be taken advantage of.
-                </p>
-                <p>
-                    If you find an issue, raise it with
-                    staff and you'll be rewarded depending on it's severity. Exploit and you'll risk losing anything
-                    gained from it and face a potential ban.
-                </p>
-                <h4>Farms & Lag Machines</h4>
-                <p>
-                    Do not attempt or take any action that will harm or disrupt the server or its functionality. This includes but not limited to lag machines or farms large enough to cause significant impact to server load.
-                </p>
-                <br>
-                <br>
-                <h2>6. No impersonating staff</h2>
-                <hr>
-                <p>Do not falsely claim to be a new or existing staff member, or rename your character to that of an
-                    existing staff member.</p>
-                <br>
-                <br>
-                <h2>7. No Roleplaying</h2>
-                <hr>
-                <p>Do not assume the attitudes, actions, or discourse of an individual or character in order to engage
-                    in an imaginary scenario - otherwise known as roleplay.</p>
-            </div>
-            <!-- ################################################ -->
-            <!-- VANILLA RULES START -->
-            <!-- ################################################ -->
-            <div class="tab-pane fade" id="vanilla" role="tabpanel" aria-labelledby="vanilla-tab">
-                <br>
-                <br>
-                <h2>1. No using hacks or modded clients</h2>
-                <hr>
-                <p>Do not use any hacks, injection scripts or modified game clients that provides you with any sort of
-                    utility or advantage. This includes any "utility" clients and texture packs.</p>
-                <p>Exceptions to this rule are:</p>
-                <ul>
-                    <li>Clients which optimize the game but do not provide any gameplay advantage outside of increasing
-                        FPS. Specifically:</li>
-                    <ul>
-                        <li>Forge/Optifine</li>
-                        <li>Badlion</li>
-                        <li>Lunar Client</li>
-                    </ul>
-                    <li>Mods that change shaders and lighting.</li>
-                    <li>Mods such as minimap, that provide waypoints and minimaps.</li>
-                    <li>Ask us if you are unsure.</li>
-                </ul>
-                <h2>1.1. Use of automation software</h2>
-                <p style="color:greenyellow">What is allowed:</p>
-                <ul>
-                    <li>Third party software to simulate button presses is allowed. I.e. AutoHotkey, AutoIt.</li>
-                    <li>AFK fishing contraptions and taping down your left mouse button.</li>
-                </ul>
-                <p style="color:red">What is not allowed:</p>
-                <ul>
-                    <li>Any mod or third party software that manipulates mouse movement.</li>
-                    <li>Altering the games code in any capacity order to automate actions. I.e. No modded autoclickers
-                        or button presses.</li>
-                    <li>Injecting code into the game at runtime. I.e. injection scripts.</li>
-                </ul>
-                <br>
-                <br>
-                <h2>2. No spamming or advertising</h2>
-                <hr>
-                <p>"Spam" includes repeated messages, messages sent in rapid succession with no inherent value, and
-                    messages that are nonsensical.</p>
-                <p>"Advertisement" is any reference to a third party product or service with any intent of providing
-                    said product or service with exposure.</p>
-                Advertisement Exception:
-                <ul>
-                    <li>Self promotion of a media channel.</li>
-                </ul>
-                <br>
-                <br>
-                <h2>3. No excessively harassing other players</h2>
-                <hr>
-                <p>Swearing is fine, banter is encouraged. But if you act with the sole intention of negatively
-                    impacting another players experience in any significant capacity, verbally or otherwise, it will be
-                    considered harassment.</p>
-                <br>
-                <br>
-                <h2>3.1. Do not share private information</h2>
-                <hr>
-                <p>Players should remain anonymous unless they state otherwise. Do not share any personal identifiable
-                    information about a specific individual, doing is not only a dick move, but it can potentially
-                    violate privacy laws.</p>
-                <br>
-                <br>
-                <h2>4. No impersonating staff</h2>
-                <hr>
-                <p>Do not falsely claim to be a new or existing staff member, or rename your character to that of an
-                    existing staff member.</p>
-                <br>
-                <br>
-                <h2>5. No Roleplaying</h2>
-                <hr>
-                <p>Do not assume the attitudes, actions, or discourse of an individual or character in order to engage
-                    in a imaginary scenario.</p>
-            </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="text-center my-4">
+            <h1>Omni World Live Map</h1>
+            <p class="lead">Explore our world in real-time</p>
         </div>
-    </div>
-    
-    
-    <!-- 3 Content End -->
-    
-    
-    <!-- 4 Footer Start -->
-    <div class="container-fluid footer">
-        <div class="container d-flex justify-content-center">
-            <div class="row">
-                <div class="col">
-                    <h5>Contact Us</h5>
-                    <br><strong>Email</strong>
-                    <br><span class="email">admin@budgienet.com</span>
-                    <br>
-                    <br><strong>Discord</strong>
-                    <br><a href="https://discord.gg/budgienetwork" target="_blank">discord.gg/budgienetwork</a>
-                </div>
-                <div class="col">
-                    <h5>Vote Sites</h5>
-                    <br><a href="https://budgienet.com/v1" target="_blank">budgienet.com/v1</a>
-                    <br><a href="https://budgienet.com/v2" target="_blank">budgienet.com/v2</a>
-                    <br><a href="https://budgienet.com/v3" target="_blank">budgienet.com/v3</a>
-                    <br><a href="https://budgienet.com/v4" target="_blank">budgienet.com/v4</a>
-                    <br><a href="https://budgienet.com/v5" target="_blank">budgienet.com/v5</a>
-                    <br><a href="https://budgienet.com/v6" target="_blank">budgienet.com/v6</a>
-                </div>
-                <div class="col">
-                    <h5>Direct IP's</h5>
-                    <br><strong>Budgie Survival</strong>
-                    <br><code>s1.budgie.network</code>
-                    <br><strong>Canary Survival</strong>
-                    <br><code>s2.budgie.network</code>
-                    <br><strong>Skyblock</strong>
-                    <br><code>skyblock.budgie.network</code>
-                    <br><strong>SkyGrid</strong>
-                    <br><code>skygrid.budgie.network</code>
+        
+        <!-- Map Embed -->
+        <div class="map-container">
+            <iframe src="https://map.omwrld.com" class="map-embed" allowfullscreen></iframe>
+            <a href="https://map.omwrld.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg map-button">
+                <i class="fas fa-external-link-alt me-2"></i>Open Full Map
+            </a>
+        </div>
+        
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-8 text-center">
+                <div class="alert alert-info">
+                    <h4><i class="fas fa-info-circle me-2"></i>Map Controls</h4>
+                    <p>Use your mouse to navigate the map - scroll to zoom, click and drag to pan</p>
+                    <p>Toggle between surface, cave, and nether views using the buttons on the map</p>
                 </div>
             </div>
         </div>
-        <p class="container d-flex justify-content-center" style="padding-top:50px">
-            <a href="tos.html">Privacy Policy / Terms and Conditions</a>
-        </p>
-        <p class="container d-flex justify-content-center" style="padding-top:10px">
-            Copyright © BudgieNet 2024. All rights reserved.
-        </p>
-    </div>
-    <!-- 4 Footer End -->
-    </body>
-    
-    
-    <script src="gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
-    
-    </html>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>About Omni World</h5>
+                    <p>The ultimate Minecraft nation-building experience with custom plugins and an active community.</p>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li><a href="#">Link 4</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Server Info</h5>
+                    <ul class="list-unstyled">
+                        <li>IP: <strong>OmWrld.com</strong></li>
+                        <li>Version: 1.21.5+</li>
+                        <li>Online: 24/7/365</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: var(--primary);">
+            <div class="text-center">
+                <p class="mb-0">© 2025 Omni World. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
