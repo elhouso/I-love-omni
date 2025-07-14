@@ -1,0 +1,62 @@
+﻿.content-block {
+    padding: 40px !important;
+    padding-top: 20px;
+    align-items: center;
+    display: flex;
+}
+.footer code, .footer .email {  
+    -webkit-user-select: all;  /* Chrome 49+ */
+    -moz-user-select: all;     /* Firefox 43+ */
+    -ms-user-select: all;      /* No support yet */
+    user-select: all;          /* Likely future */   
+}
+.gamemode-header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-height: 50px;
+}
+.carousel {
+    max-width: 600px !important;
+    height: 100%;
+}
+    .carousel-control-next:hover, .carousel-control-prev:hover {
+        transition-duration: 0.2s;
+        background:rgba(155, 155, 155, 0.5);
+    }
+
+.section-header {
+    align-items: center;
+    display: flex;
+    padding-left: 40px;
+    margin-top: 40px;
+}
+
+.survival-header {
+    height: 200px;
+    background-size: cover;
+    background-image:
+                linear-gradient(45deg,
+                    rgb(52, 58, 62),
+                    rgba(8, 83, 156, 0)), 
+                      url('img/survival-banner.webp');
+}
+
+.skyblock-header {
+    height: 200px;
+    background-size: cover;
+    background-image:
+                linear-gradient(45deg,
+                    rgb(52, 58, 62),
+                    rgba(8, 83, 156, 0)), 
+                      url('img/skyblock-banner.webp');
+}
+
+.skygrid-header {
+    height: 200px;
+    background-size: cover;
+    background-image:
+                linear-gradient(45deg,
+                    rgb(52, 58, 62),
+                    rgba(8, 83, 156, 0)), 
+                      url('img/skygrid-banner.webp');
+}

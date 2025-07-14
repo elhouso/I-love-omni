@@ -1,0 +1,1319 @@
+﻿<!DOCTYPE html>
+<html data-bs-theme="dark">
+
+<head>
+    <title>BudgieNet | Australian Minecraft Network</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Budgie Network - a Minecraft server network owned and hosted in Australia. Play Survival, Skyblock, SkyGrid, Creative, or Vanilla game modes.">
+    <meta name="keywords" content="Minecraft, Australian Minecraft Server, Budgie Network, BudgieNet">
+    
+    <link href="common.css" rel="stylesheet">
+    <link href="npm/bootstrap%405.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script type="text/javascript" src="copyip.js"></script>
+    <script src="npm/bootstrap%405.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link href="commands.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 1 Header Start -->
+    <div class="header">
+        <div class="header-content container-fluid">
+            <div class="row justify-content-between">
+                <div class="header-count col-2">
+                    <span style="font-size:18pt">Playing Now</span>
+                    <br><span style="display:block;margin-top: -10px;font-size:26pt;color:greenyellow" data-playercounter-ip="budgie.network">0</span>
+                </div>
+                <div class="header-logo col" media="(max-width: 600px)">
+                    <div>
+                        <img src="img/logo.png">
+                        <br><span class="fs-2">Australian Minecraft Network</span>
+                        <br>
+                    </div>
+                    <div>
+                        <div class="copyip btn btn-light" onclick="copyip(this)"><input value="budgie.network" readonly=""><span>Copy IP</span></div>
+                    </div>
+                </div>
+                <div class="header-online col-2" media="(max-width: 600px)">
+                    <span style="font-size:18pt">Server Status</span>
+                    <br><span style="display:block;margin-top: -10px;font-size:26pt;text-transform: capitalize;color:greenyellow" data-playercounter-ip="budgie.network" data-playercounter-status=""></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 1 Header End -->
+    <!-- 2 Navbar Start -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCenteredExample" aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+                <!-- Left links -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="index.htm">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link nav-active" href="commands.html">Commands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="rules.html">Rules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="https://shop.budgienet.com/" target="_blank">Store</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 2 Navbar End -->
+    
+    
+    <!-- 3 Content Start -->
+    <div class="container content" style="padding:40px !important">
+        <h1>Server Commands</h1>
+        <p>Here you can find details on different features of each server as well as any useful commands.</p>
+        <br>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="network-tab" data-bs-toggle="tab" data-bs-target="#network" type="button" role="tab" aria-controls="network" aria-selected="false">Global</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="survival-tab" data-bs-toggle="tab" data-bs-target="#survival" type="button" role="tab" aria-controls="survival" aria-selected="true">Survival</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skyblock-tab" data-bs-toggle="tab" data-bs-target="#skyblock" type="button" role="tab" aria-controls="skyblock" aria-selected="true">Skyblock</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skygrid-tab" data-bs-toggle="tab" data-bs-target="#skygrid" type="button" role="tab" aria-controls="skygrid" aria-selected="true">SkyGrid</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="creative-tab" data-bs-toggle="tab" data-bs-target="#creative" type="button" role="tab" aria-controls="creative" aria-selected="true">Creative</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="vanilla-tab" data-bs-toggle="tab" data-bs-target="#vanilla" type="button" role="tab" aria-controls="vanilla" aria-selected="true">Vanilla</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <!-- ################################################ -->
+            <!-- GLOBAL START -->
+            <!-- ################################################ -->
+            <div class="tab-pane show active" id="network" role="tabpanel" aria-labelledby="network-tab">
+                <br>
+                <br>
+                <ol>
+                    <li><a href="#1" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Voting (Survival, Skyblock, SkyGrid)</a></li>
+                    <li><a href="#2" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ranks (Survival, Skyblock, SkyGrid)</a></li>
+                    <li><a href="#3" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Player Market (Survival, SkyGrid)</a></li>
+                    <li><a href="#4" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Global commands</a></li>
+                    <li><a href="#5" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Server Shortcuts</a></li>
+                    <li><a href="#6" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Daily Restarts</a></li>
+                </ol>
+                <br>
+                <br>
+                <h2 id="1">Voting (Survival, Skyblock, SkyGrid)</h2>
+                <hr>
+                <p>You can vote once every day although the exact rules and behaviors vary from site to site.
+                <br>Each vote will give you a key:</p>
+                <ul>
+                    <li>75% chance for [Common]</li>
+                    <li>20% chance for [Uncommon]</li>
+                    <li>5% chance for [Rare]</li>
+                </ul>
+                <table class="table command-table">
+                    <tr>
+                        <td>/vote</td>
+                        <td>Shows clickable voting links.</td>
+                    </tr>
+                    <tr>
+                        <td>/votenext</td>
+                        <td>Shows what sites you haven't voted on.</td>
+                    </tr>
+                    <tr>
+                        <td>/voteshop</td>
+                        <td>Opens the voting shop to buy unique items with vote points.</td>
+                    </tr>
+                    <tr>
+                        <td>/votepoints</td>
+                        <td>Shows how many vote points you have.</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h2 id="2">Ranks (Survival, Skyblock, SkyGrid)</h2>
+                <hr>
+                <p>Players start with the "Budgie" rank and ranks inherit previous ranks perks.</p>
+                <table class="table command-table">
+                    <tr>
+                        <td>/ranks</td>
+                        <td>View the current ranks available with their requirements.</td>
+                    </tr>
+                    <tr>
+                        <td>/rankup</td>
+                        <td>Warp to the rankup altar / Attempt to rankup.</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h2 id="3">Player Market (Survival, SkyGrid)</h2>
+                <hr>
+                <p>Right-click the [Rent] sign to rent the plot.</p>
+                <p>Sell items by left-clicking on a chest while holding the item. Fill the chest to stock the shop.</p>
+                <h5>Warps</h5>
+                <table class="table command-table">
+                    <tr>
+                        <td>/market</td>
+                        <td>Takes you to the player market warp.</td>
+                    </tr>
+                    <tr>
+                        <td>/market &lt;number&gt;</td>
+                        <td>Takes you directly to the specified plot number.</td>
+                    </tr>
+                </table>
+                <h5>Plots</h5>
+                <table class="table command-table">
+                    <tr>
+                        <td>/arm gui</td>
+                        <td>Opens the market shop interface.</td>
+                    </tr>
+                    <tr>
+                        <td>/arm restore</td>
+                        <td>Resets to a empty plot, deletes all items.</td>
+                    </tr>
+                    <tr>
+                        <td>/arm extend</td>
+                        <td>Extend your rent by 1 week.</td>
+                    </tr>
+                    <tr>
+                        <td>/arm addmember</td>
+                        <td>Allows a player to build on your plot.</td>
+                    </tr>
+                    <tr>
+                        <td>/arm removemember</td>
+                        <td>Disallows a player to build on your plot.</td>
+                    </tr>
+                </table>
+                <h5>QuickShops</h5>
+                <p>Create a shop by punching a chest while holding an item.</p>
+                <table class="table command-table">
+                    <tr>
+                        <td>/qs staff add</td>
+                        <td>Gives a player access to a chest shop.</td>
+                    </tr>
+                    <tr>
+                        <td>/qs staff del</td>
+                        <td>Remove a players access from a shop.</td>
+                    </tr>
+                    <tr>
+                        <td>/qs staff list</td>
+                        <td>Show players that have access to a chest shop.</td>
+                    </tr>
+                    <tr>
+                        <td>/qs staff clear</td>
+                        <td>Remove all staff from a chest shop.</td>
+                    </tr>
+                </table>
+                <h5>Plot Expiration</h5>
+                <p>Survival plots <strong>will</strong> be wiped when expired.
+                <br>SkyGrid plots <strong>will not</strong> be wiped when expired.</p>
+                <br>
+                <br>
+                <h2 id="4">Global commands</h2>
+                <hr>
+                <table class="table command-table">
+                    <tr>
+                        <td>/ignore &lt;player&gt;</td>
+                        <td>Hides all messages and chat from the player.</td>
+                    </tr>
+                    <tr>
+                        <td>/msg &lt;player&gt; &lt;message&gt;</td>
+                        <td>Sends a private message to a player.</td>
+                    </tr>
+                    <tr>
+                        <td>/r &lt;message&gt;</td>
+                        <td>Sends a private message to the last player you messaged.</td>
+                    </tr>
+                    <tr>
+                        <td>/afk</td>
+                        <td>Toggles your "afk" status.</td>
+                    </tr>
+                </table>
+                <table class="table command-table">
+                    <tr>
+                        <td>/help</td>
+                        <td>Gives you a link to this webpage.</td>
+                    </tr>
+                    <tr>
+                        <td>/rules</td>
+                        <td>Lists the rules.</td>
+                    </tr>
+                    <tr>
+                        <td>/server &lt;server&gt; </td>
+                        <td>Connect directly to another server.</td>
+                    </tr>
+                </table>
+                <table class="table command-table">
+                    <tr>
+                        <td>/hiderank</td>
+                        <td>Toggles the visibility of your rank tag.</td>
+                    </tr>
+                    <tr>
+                        <td>/hidevip</td>
+                        <td>Toggles the visibility of your VIP tag.</td>
+                    </tr>
+                </table>
+                <br>
+                <h2 d="5">Server Shortcuts</h2>
+                <hr>
+                <table class="table command-table">
+                    <tr>
+                        <td>/vanilla</td>
+                        <td>Shortcut to join Vanilla Survival.</td>
+                    </tr>
+                    <tr>
+                        <td>/creative_server</td>
+                        <td>Shortcut to join Creative.</td>
+                    </tr>
+                    <tr>
+                        <td>/skygrid</td>
+                        <td>Shortcut to join Skygrid.</td>
+                    </tr>
+                    <tr>
+                        <td>/skyblock</td>
+                        <td>Shortcut to join Skyblock.</td>
+                    </tr>
+                    <tr>
+                        <td>/canary_survival</td>
+                        <td>Shortcut to join Canary Survival.</td>
+                    </tr>
+                    <tr>
+                        <td>/budgie_survival</td>
+                        <td>Shortcut to join Budgie Survival.</td>
+                    </tr>
+                    <tr>
+                        <td>/hub</td>
+                        <td>Shortcut to join the hub.</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h2 id="6">Daily Restarts</h2>
+                <hr>
+                <p>The network will restart once per day in order to maintain optimal performance and to apply pending fixes. 
+                    <br>Restart times are staggered to reduce downtime.</p>
+                <strong>5pm AEDT</strong>
+                <ul>
+                    <li>Network (Proxy)</li>
+                    <li>Survivals</li>
+                    <li>Skyblock</li>
+                    <li>SkyGrid</li>
+                </ul>
+                <strong>1am AEDT</strong>
+                <ul>
+                    <li>Hub</li>
+                    <li>Creative</li>
+                    <li>Vanilla</li>
+                </ul>
+                <strong>2am AEDT</strong>
+                <ul>
+                    <li>Legacy Survivals</li>
+                </ul>
+                <table class="table command-table">
+                    <tr>
+                        <td>/timeleft</td>
+                        <td>Displays time remaining before the <strong>server</strong> restart.</td>
+                    </tr>
+                    <tr>
+                        <td>/btimeleft</td>
+                        <td>Displays time remaining before the <strong>network (Proxy)</strong> restart.</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- ################################################ -->
+            <!-- SURVIVAL START -->
+            <!-- ################################################ -->
+            <div class="tab-pane" id="survival" role="tabpanel" aria-labelledby="survival-tab">
+                <br>
+                <br>
+                <ol>
+                    <li><a href="#survival0" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Homes</a></li>
+                    <li><a href="#survival1" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Claims</a></li>
+                    <li><a href="#survival2" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">McMMO</a></li>
+                    <li><a href="#survival3" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Prestige</a></li>
+                    <li><a href="#survival4" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Vanilla Mechanic Changes</a></li>
+                    <li><a href="#survival5" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Player Warps</a></li>
+                </ol>
+                <br>
+                <br>
+                <h2 id="survival1">Homes</h2>
+                <hr>
+                A <strong>home</strong> is a saved destination that you can visit any time by using <code>/home</code>.
+                <br>As your rank increases you can have multiple homes.
+                <ul>
+                    <li>Nomad (max 3 homes)</li>
+                    <li>Adventurer (max 5 homes)</li>
+                    <li>Veteran (max 7 homes)</li>
+                    <li>Legend (max 9 homes)</li>
+                    <li>God (max 15 homes)</li>
+                </ul>
+                VIP has a max of 20. (obtained via Uncommon crate or store)
+                <br>The Homes perk has a max of 30. (obtained via voting: <code>/voteshop</code>)
+                <br>
+                <br>
+                <table class="table command-table">
+                    <tr>
+                        <td>/home</td>
+                        <td>Go to your default home.</td>
+                    </tr>
+                    <tr>
+                        <td>/home &lt;name&gt;</td>
+                        <td>Go to one of your specified homes.</td>
+                    </tr>
+                    <tr>
+                        <td>/sethome &lt;name&gt;</td>
+                        <td>Sets a personal home under any name.</td>
+                    </tr>
+                    <tr>
+                        <td>/homes</td>
+                        <td>View a list of all your current homes.</td>
+                    </tr>
+                    <tr>
+                        <td>/delhome &lt;name&gt;</td>
+                        <td>Remove one of your specified homes.</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h2 id="survival1">Claims</h2>
+                <hr>
+                <div class="content-block d-flex justify-content-start">
+                    <div style="padding-right: 20px;">
+                        <p>
+                            While holding a <strong>golden shovel</strong>, right-click 2 points on the ground to create a claimed area. 
+                            <br>Your new claim will be highlighted by glowstone. Use <strong>/kit claim</strong> for a free shovel.
+                        </p>
+                        <p>Anything inside the glowstone box (visual only) can only be modified or accessed by you.</p>
+                        <p>Right-click on the ground with a <strong>stick</strong> to check its claim status. Crouch + right-click to see all surrounding claims.</p>
+                        <ul>
+                            <li>Only you have access to anything inside your claims.</li>
+                            <li>PVP is disabled inside claims.</li>
+                            <li>Claim height extends from bedrock to world height.</li>
+                            <li>You have a limited amount of claim blocks.</li>
+                            <ul>
+                                <li>You will receive 100 claim blocks per hour, up to 50,000.</li>
+                                <li>You can buy more with in-game money with /buyclaim.</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <img src="img/gp.webp" style="height:100%">
+                </div>
+                <br>
+                <h5>Claim Expiration</h5>
+                <p>If a player has not logged in for more than 100 days and has less than 1500 total claim blocks, all their claims will be removed.</p>
+                <br>
+                <h5>Claim Permissions</h5>
+                <table class="table command-table">
+                    <tr>
+                        <td>/UnTrust &lt;player&gt;/All</td>
+                        <td>Revokes all the players permissions in the claim.</td>
+                    </tr>
+                    <tr>
+                        <td>/AccessTrust &lt;player&gt;</td>
+                        <td>Gives permission to use your buttons, levers, and beds.</td>
+                    </tr>
+                    <tr>
+                        <td>/ContainerTrust &lt;player&gt;</td>
+                        <td>Gives permission to crafting gear, containers, and animals. Includes access trust.</td>
+                    </tr>
+                    <tr>
+                        <td>/TrustList</td>
+                        <td>Lists the permissions for the claim you&#39;re standing in.</td>
+                    </tr>
+                    <tr>
+                        <td>/Trust &lt;player&gt;</td>
+                        <td>Gives the player permission to build/place/use in your claim.</td>
+                    </tr>
+                </table>
+                <br>
+                <h5>Claim Management</h5>
+                <table class="table command-table">
+                    <tr>
+                        <td>/subdivideclaims</td>
+                        <td>Switches your shovel to subdivision mode, so you can split your claims into smaller parts.</td>
+                    </tr>
+                    <tr>
+                        <td>/restrictsubclaim</td>
+                        <td>Restricts a subclaim, so that it inherits no permissions from the parent claim.</td>
+                    </tr>
+                    <tr>
+                        <td>/claimslist</td>
+                        <td>Lists a player&#39;s claims and claim block details.</td>
+                    </tr>
+                    <tr>
+                        <td>/claimexplosions</td>
+                        <td>Toggles whether explosions can cause damage within your claim.</td>
+                    </tr>
+                </table>
+                <br>
+                <h5>Claim Subdivision (mini claims inside claims)</h5>
+                <div class="content-block d-flex justify-content-start">
+                    <div style="padding-right: 20px;">
+                        <p>1. Stand in your existing claim.</p>
+                        <p>2. Use the command <code>/subdivideclaims</code></p>
+                        <p>3. Hold your golden shovel and make a claim selection like you would a normal claim.</p>
+                        <p>4. Your subclaim will show as a silver box now. </p>
+                        <ul>
+                            <li>Stand in your subclaim and use <code>/restrictsubclaim</code> to remove all trust perms from it.</li>
+                            <li>Stand in your subclaim and use <code>/trust &lt;player&gt;</code> to add a player to the subclaim.</li>
+                        </ul>
+                    </div>
+                    <img src="img/subclaim.webp" style="height:100%">
+                </div>
+                <br>
+                <br>
+                <h2 id="survival2">McMMO</h2>
+                <hr>
+                <p>McMMO is an addon that adds leveled progression to almost every activity. As your level increases for a skill, you will obtain new passive and active abilities to assist you in that skill.</p>
+                <p>The following skills are available for leveling up (maximum obtainable level if applicable):</p>
+                <table class="skill-table">
+                    <tr>
+                        <td><li>Acrobatics (max 3000)</li></td>
+                        <td><li>Fishing</li></td>
+                        <td><li>Smelting</li></td>
+                    </tr>
+                    <tr>
+                        <td><li>Alchemy</li></td>
+                        <td><li>Herbalism (max 1500)</li></td>
+                        <td><li>Swords</li></td>
+                    </tr>
+                    <tr>
+                        <td><li>Archery</li></td>
+                        <td><li>Mining</li></td>
+                        <td><li>Taming</li></td>
+                    </tr>
+                    <tr>
+                        <td><li>Axes</li></td>
+                        <td><li>Repair</li></td>
+                        <td><li>Unarmed</li></td>
+                    </tr>
+                    <tr>
+                        <td><li>Excavation</li></td>
+                        <td><li>Salvage</li></td>
+                        <td><li>Woodcutting</li></td>
+                    </tr>
+                </table>
+                <br>
+                <h5>Basic Commands</h5>
+                <table class="table command-table">
+                    <tr>
+                        <td>/mcstats</td>
+                        <td>View all your current skill levels.</td>
+                    </tr>
+                    <tr>
+                        <td>/&lt;skill&gt;</td>
+                        <td>View info about that skill (see above for applicable skills).</td>
+                    </tr>
+                    <tr>
+                        <td>/mctop</td>
+                        <td>Shows mcmmo leaderboards.</td>
+                    </tr>
+                    <tr>
+                        <td>/mcability</td>
+                        <td>Toggle right-clicking for skill abilities.</td>
+                    </tr>
+                    <tr>
+                        <td>/mcrank &lt;skill&gt;</td>
+                        <td>See player ranking for the specified skill.</td>
+                    </tr>
+                    <tr>
+                        <td>/inspect &lt;player&gt;</td>
+                        <td>See a nearby players mcmmo stats.</td>
+                    </tr>
+                </table>
+                <br>
+                <h5>Additional Information</h5>
+                <ul>
+                    <li>McMMO is based on a linear exp curve: <code>exp = 1020 + (level * 20)</code>.</li>
+                    <li>Mob spawners do not give exp.</li>
+                    <li>Endermen give reduced exp.</li>
+                    <li>There is no cap on how much exp can be gained. (some levels are capped, see above)</li>
+                    <li>Tree Feller gives full exp.</li>
+                    <li>Pistons will not reset ore states.</li>
+                    <li><a href="https://mcmmo.fandom.com/wiki/Acrobatics">See here for acrobatics exp limitations.</a></li>
+                </ul>
+                <br>
+                <h5>EXP Potions</h5>
+                <div class="content-block content-skyblock d-flex justify-content-between row">
+                    <div class="col">
+                        <ul>
+                            <li>EXP Potions will multiply your experience rate by the specified amount.</li>
+                            <li>EXP pots do not stack EXP rates.</li>
+                            <li>If multiple are active, the highest rate will be used.</li>
+                            <li>The time remaining <strong>will</strong> stack.</li>
+                            <li>EXP potions can be obtained via Hard dungeons and Raids at <code>/dungeons</code>.</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <img src="img/exp_pot.webp">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="content-block content-skyblock d-flex justify-content-between row">
+                    <div class="col">
+                        The GigaForge alchemist can be found at <code>/dungeons</code>.
+                        <br>Exp potions can be combined into higher rates.
+                        <ul>
+                            <li>4 x Double 15 Min -> Double (1 Hour)</li>
+                            <li>2 x Double (1 Hour) -> Triple (1 Hour)</li>
+                            <li>2 x Triple (1 Hour) -> Quadruple (1 Hour)</li>
+                            <li>2 x Quadruple (1 Hour) -> Quintuple (1 Hour)</li>
+                            <li>2 x Quintuple (1 Hour) -> Sextuple (1 Hour)</li>
+                            <li>2 x Sextuple (1 Hour) -> Septuple (1 Hour)</li>
+                            <li>2 x Septuple (1 Hour) -> Octuple (1 Hour)</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <img src="img/alchemist.webp">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h2 id="survival3">Prestige</h2>
+                <hr>
+                <p>Once you reach God rank, you will have to opportunity to enter the Prestige dungeon at <code>/dungeons</code> and unlock your next prestige rank.</p>
+                <table class="table command-table">
+                    <tr>
+                        <td>/prestige</td>
+                        <td>Warp to the God guild, in front of the prestige altar.</td>
+                    </tr>
+                    <tr>
+                        <td>/prestiges</td>
+                        <td>View the current prestiges available with their requirements.</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h2 id="survival4">Vanilla Mechanic Changes</h2>
+                <hr>
+                <p>All servers use papermc.</p>
+                <h5><strong>Item Despawn Rate</strong></h5>
+                <p>Default item despawn time is 5 minutes.</p>
+                Modified despawn times:
+                <ul>
+                    <li>2 Minutes</li>
+                    <ul>
+                        <li>Spruce Logs, Dark Oak Logs</li>
+                    </ul>
+                    <li>30 Seconds</li>
+                    <ul>
+                        <li>Blaze Rod, Bone, Ender Pearl, Gold Nugget, Gunpowder, Ink Sac, Iron Ingot, Saddle, Slime Ball, Spider Eye, String, Poppy</li>
+                    </ul>
+                    <li>15 Seconds</li>
+                    <ul>
+                        <li>Cactus, Cobblestone, Melon Slice, Pumpkin, Rotten Flesh</li>
+                    </ul>
+                    <li>10 Seconds</li>
+                    <ul>
+                        <li>Golden Sword</li>
+                    </ul>
+                </ul>
+                <br>
+                <br>
+                <h5><strong>Despawn Range</strong></h5>
+                The following applies to all mobs.
+                <ul>
+                    <li>Soft cap: 32</li>
+                    <ul><li>Block radius from a player where mobs will randomly despawn over time.</li></ul>
+                    <li>Hard cap: 96</li>
+                    <ul><li>Block radius from a player where mobs will forcibly despawn.</li></ul>
+                </ul>
+                <br>
+                <h5><strong>Mob Limits</strong></h5>
+                The following is the maximum amount of entities that can exist an a given area.
+                <ul>
+                    <li>Animals / Friendly Mobs (same type)</li>
+                    <ul>
+                        <li>20 in 5 block radius.</li>
+                        <li>50 in 160 block radius.</li>
+                    </ul>
+                    <li>Villagers</li>
+                    <ul>
+                        <li>5 per chunk.</li>
+                        <li>40 in 150 block radius.</li>
+                    </ul>
+                    <li>Iron Golems</li>
+                    <ul>
+                        <li>12 per chunk.</li>
+                        <li>80 in 60 block radius.</li>
+                    </ul>
+                    <li>Wolves</li>
+                    <ul>
+                        <li>25 in 50 block radius.</li>
+                    </ul>
+                    <li>Hostile Mobs</li>
+                    <ul>
+                        <li>15 per chunk.</li>
+                    </ul>
+                    <li>Endermen</li>
+                    <ul>
+                        <li>10 per chunk.</li>
+                    </ul>
+                    <li>Warden</li>
+                    <ul>
+                        <li>5 in 50 block radius.</li>
+                    </ul>
+                </ul>
+                <br>
+                <br>
+                <h5><strong>Activation Range</strong></h5>
+                Entities outside of this range (block radius) will tick at a reduced rate.
+                <ul>
+                    <li>Animals: 8</li>
+                    <li>Monsters: 26</li>
+                    <li>Villagers: 16</li>
+                    <li>Raiders: 16</li>
+                </ul>
+                <br>
+                <br>
+                <h5><strong>View/Spawn Range</strong></h5>
+                Distances measured in chunk radius from the player.
+                <ul>
+                    <li>View distance: 10</li>
+                    <li>Simulation distance: 4</li>
+                    <ul><li>Any entity outside this radius will not be ticked by the server.</li></ul>
+                    <li>Mob spawn range: 3</li>
+                </ul>
+                <br>
+                <br>
+                <h2 id="survival5">Player Warps</h2>
+                <hr>
+                <p>Permanent VIP may place 1 player warp.</p>
+                <table class="table command-table">
+                    <tr>
+                        <td>/pwarp</td>
+                        <td>Opens the Player Warp GUI.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp ban set/remove/list &lt;warp&gt; &lt;username&gt;</td>
+                        <td>Bans or unbans players from using your warps.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp category set &lt;warp&gt; farms/houses/other/shops</td>
+                        <td>Sets the category of your pwarp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp desc set/remove &lt;warp&gt; &lt;description&gt;</td>
+                        <td>Sets or removes the description for your warp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp help</td>
+                        <td>Shows additional pwarp commands.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp password set &lt;warp&gt; &lt;password&gt;</td>
+                        <td>Creates a password in order to access the warp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp rate &lt;warp&gt; &lt;rating&gt;</td>
+                        <td>Adds a rating to someone elses pwarp from 1-5.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp remove &lt;warp&gt;</td>
+                        <td>Removes the specified player warp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp rename &lt;warp&gt;</td>
+                        <td>Renames an existing warp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp set &lt;name&gt;</td>
+                        <td>Creates a player warp at your location.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp set icon &lt;warp&gt;</td>
+                        <td>Sets the icon for your warp.</td>
+                    </tr>
+                </table>
+                <p>PWarps will expire if the owner has not logged on for 100 days.</p>
+            </div>
+            <!-- ################################################ -->
+            <!-- SKYBLOCK START -->
+            <!-- ################################################ -->
+            <div class="tab-pane" id="skyblock" role="tabpanel" aria-labelledby="skyblock-tab">
+                <br>
+                <br>
+                <ol>
+                    <li><a href="#skyblock1" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Islands and Movement</a></li>
+                    <li><a href="#skyblock2" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Vanilla Mechanic Changes</a></li>
+                </ol>
+                <br>
+                <br>
+                <h2 id="skyblock1">Islands and Movement</h2>
+                <hr>
+                <p>Anyone has the ability to access player warps, however only Dragon and above have the ability to create a pwarp. VIPs have the ability to make up to 3.</p>
+                <table class="table command-table">
+                    <tr>
+                        <td>/challenges</td>
+                        <td>Shows challenges progression.</td>
+                    </tr>
+                    <tr>
+                        <td>/is</td>
+                        <td>Creates an island / Open island control panel.</td>
+                    </tr>
+                    <tr>
+                        <td>/is ban &lt;player&gt;</td>
+                        <td>Bans a player from visiting your island.</td>
+                    </tr>
+                    <tr>
+                        <td>/is biomes</td>
+                        <td>Buy and change the biome of your island.</td>
+                    </tr>
+                    <tr>
+                        <td>/is expel &lt;player&gt;</td>
+                        <td>Kicks a player from your island.</td>
+                    </tr>
+                    <tr>
+                        <td>/is language</td>
+                        <td>Change the language preferences.</td>
+                    </tr>
+                    <tr>
+                        <td>/is private</td>
+                        <td>Disallows visitors.</td>
+                    </tr>
+                    <tr>
+                        <td>/is public</td>
+                        <td>Allows visitors.</td>
+                    </tr>
+                    <tr>
+                        <td>/is team accept</td>
+                        <td>Accept an invite to join another island.</td>
+                    </tr>
+                    <tr>
+                        <td>/is team invite &lt;player&gt;</td>
+                        <td>Invite a player to join your island as a member.</td>
+                    </tr>
+                    <tr>
+                        <td>/is visit &lt;player&gt;</td>
+                        <td>Teleports you to a players island.</td>
+                    </tr>
+                    <tr>
+                        <td>/is warps</td>
+                        <td>Lists player made island warps.</td>
+                    </tr>
+                    <tr>
+                        <td>/warp &lt;rank&gt;</td>
+                        <td>Warp to the public island for the specified rank.</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h2 id="skyblock2">Vanilla Mechanic Changes</h2>
+                <hr>
+                <p>All servers use papermc.</p>
+                <h5><strong>Item Despawn Rate</strong></h5>
+                <p>Default item despawn time is 5 minutes.</p>
+                Modified despawn times:
+                <ul>
+                    <li>2 Minutes</li>
+                    <ul>
+                        <li>Spruce Logs, Dark Oak Logs</li>
+                    </ul>
+                    <li>30 Seconds</li>
+                    <ul>
+                        <li>Blaze Rod, Bone, Ender Pearl, Gold Nugget, Gunpowder, Ink Sac, Iron Ingot, Saddle, Slime Ball, Spider Eye, String, Poppy</li>
+                    </ul>
+                    <li>15 Seconds</li>
+                    <ul>
+                        <li>Cactus, Cobblestone, Melon Slice, Pumpkin, Rotten Flesh</li>
+                    </ul>
+                    <li>10 Seconds</li>
+                    <ul>
+                        <li>Golden Sword</li>
+                    </ul>
+                </ul>
+                <br>
+                <br>
+                <h5><strong>Despawn Range</strong></h5>
+                The following applies to all mobs.
+                <ul>
+                    <li>Soft cap: 32</li>
+                    <ul><li>Block radius from a player where mobs will randomly despawn over time.</li></ul>
+                    <li>Hard cap: 128</li>
+                    <ul><li>Block radius from a player where mobs will forcibly despawn.</li></ul>
+                </ul>
+                <br>
+                <h5><strong>Mob Limits</strong></h5>
+                The following is the maximum amount of entities that can exist an a given area.
+                <ul>
+                    <li>Animals / Friendly Mobs (same type)</li>
+                    <ul>
+                        <li>15 in 5 block radius.</li>
+                    </ul>
+                    <li>Villagers</li>
+                    <ul>
+                        <li>5 per chunk.</li>
+                    </ul>
+                    <li>Iron Golems</li>
+                    <ul>
+                        <li>10 per chunk.</li>
+                    </ul>
+                    <li>Wolves</li>
+                    <ul>
+                        <li>25 in 50 block radius.</li>
+                    </ul>
+                    <li>Hostile Mobs</li>
+                    <ul>
+                        <li>15 per chunk.</li>
+                    </ul>
+                    <li>Endermen</li>
+                    <ul>
+                        <li>10 per chunk.</li>
+                    </ul>
+                    <li>Warden</li>
+                    <ul>
+                        <li>5 in 50 block radius.</li>
+                    </ul>
+                </ul>
+                <br>
+                <br>
+                <h5><strong>Activation Range</strong></h5>
+                Entities outside of this range (block radius) will tick at a reduced rate.
+                <ul>
+                    <li>Animals: 32</li>
+                    <li>Monsters: 32</li>
+                    <li>Villagers: 16</li>
+                    <li>Raiders: 16</li>
+                </ul>
+                <br>
+                <br>
+                <h5><strong>View/Spawn Range</strong></h5>
+                Distances measured in chunk radius from the player.
+                <ul>
+                    <li>View distance: 10</li>
+                    <li>Simulation distance: 5</li>
+                    <ul><li>Any entity outside this radius will not be ticked by the server.</li></ul>
+                    <li>Mob spawn range: 8</li>
+                </ul>
+            </div>
+            <!-- ################################################ -->
+            <!-- SKYGRID START -->
+            <!-- ################################################ -->
+            <div class="tab-pane" id="skygrid" role="tabpanel" aria-labelledby="skygrid-tab">
+                <br>
+                <br>
+                <ol>
+                    <li><a href="#skygrid1" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Claims</a></li>
+                    <li><a href="#skygrid2" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Vanilla Mechanic Changes</a></li>
+                    <li><a href="#skygrid3" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Player Warps</a></li>
+                </ol>
+                <br>
+                <br>
+                <h2 id="skygrid1">Claims</h2>
+                <hr>
+                <div class="content-block d-flex justify-content-start">
+                    <div style="padding-right: 20px;">
+                        <p>
+                            While holding a <strong>golden shovel</strong>, right-click 2 points on the ground to create a claimed area. 
+                            <br>Your new claim will be highlighted by glowstone. Use <strong>/kit claim</strong> for a free shovel.
+                        </p>
+                        <p>Anything inside the glowstone box (visual only) can only be modified or accessed by you.</p>
+                        <p>Right-click on the ground with a <strong>stick</strong> to check its claim status. Crouch + right-click to see all surrounding claims.</p>
+                        <ul>
+                            <li>Only you have access to anything inside your claims.</li>
+                            <li>PVP is disabled inside claims.</li>
+                            <li>Claim height extends from bedrock to world height.</li>
+                            <li>You have a limited amount of claim blocks.</li>
+                            <ul>
+                                <li>You will receive 100 claim blocks per hour, up to 50,000.</li>
+                                <li>You can buy more with in-game money with /buyclaim.</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <img src="img/gp.webp" style="height:100%">
+                </div>
+                <br>
+                <h5>Claim Expiration</h5>
+                <p>If a player has not logged in for more than 100 days and has less than 1500 total claim blocks, all their claims will be removed.</p>
+                <br>
+                <h5>Claim Permissions</h5>
+                <table class="table command-table">
+                    <tr>
+                        <td>/UnTrust &lt;player&gt;/All</td>
+                        <td>Revokes all the players permissions in the claim.</td>
+                    </tr>
+                    <tr>
+                        <td>/AccessTrust &lt;player&gt;</td>
+                        <td>Gives permission to use your buttons, levers, and beds.</td>
+                    </tr>
+                    <tr>
+                        <td>/ContainerTrust &lt;player&gt;</td>
+                        <td>Gives permission to crafting gear, containers, and animals. Includes access trust.</td>
+                    </tr>
+                    <tr>
+                        <td>/TrustList</td>
+                        <td>Lists the permissions for the claim you&#39;re standing in.</td>
+                    </tr>
+                    <tr>
+                        <td>/Trust &lt;player&gt;</td>
+                        <td>Gives the player permission to build/place/use in your claim.</td>
+                    </tr>
+                </table>
+                <br>
+                <h5>Claim Management</h5>
+                <table class="table command-table">
+                    <tr>
+                        <td>/subdivideclaims</td>
+                        <td>Switches your shovel to subdivision mode, so you can split your claims into smaller parts.</td>
+                    </tr>
+                    <tr>
+                        <td>/restrictsubclaim</td>
+                        <td>Restricts a subclaim, so that it inherits no permissions from the parent claim.</td>
+                    </tr>
+                    <tr>
+                        <td>/claimslist</td>
+                        <td>Lists a player&#39;s claims and claim block details.</td>
+                    </tr>
+                    <tr>
+                        <td>/claimexplosions</td>
+                        <td>Toggles whether explosions can cause damage within your claim.</td>
+                    </tr>
+                </table>
+                <br>
+                <h5>Claim Subdivision (mini claims inside claims)</h5>
+                <div class="content-block d-flex justify-content-start">
+                    <div style="padding-right: 20px;">
+                        <p>1. Stand in your existing claim.</p>
+                        <p>2. Use the command <code>/subdivideclaims</code></p>
+                        <p>3. Hold your golden shovel and make a claim selection like you would a normal claim.</p>
+                        <p>4. Your subclaim will show as a silver box now. </p>
+                        <ul>
+                            <li>Stand in your subclaim and use <code>/restrictsubclaim</code> to remove all trust perms from it.</li>
+                            <li>Stand in your subclaim and use <code>/trust &lt;player&gt;</code> to add a player to the subclaim.</li>
+                        </ul>
+                    </div>
+                    <img src="img/subclaim.webp" style="height:100%">
+                </div>
+                <br>
+                <br>
+                <h2 id="skygrid2">Vanilla Mechanic Changes</h2>
+                <hr>
+                <p>All servers use papermc.</p>
+                <h5><strong>Item Despawn Rate</strong></h5>
+                <p>Default item despawn time is 5 minutes.</p>
+                Modified despawn times:
+                <ul>
+                    <li>2 Minutes</li>
+                    <ul>
+                        <li>Spruce Logs, Dark Oak Logs</li>
+                    </ul>
+                    <li>30 Seconds</li>
+                    <ul>
+                        <li>Blaze Rod, Bone, Ender Pearl, Gold Nugget, Gunpowder, Ink Sac, Iron Ingot, Saddle, Slime Ball, Spider Eye, String, Poppy</li>
+                    </ul>
+                    <li>15 Seconds</li>
+                    <ul>
+                        <li>Cactus, Cobblestone, Melon Slice, Pumpkin, Rotten Flesh</li>
+                    </ul>
+                    <li>10 Seconds</li>
+                    <ul>
+                        <li>Golden Sword</li>
+                    </ul>
+                </ul>
+                <br>
+                <br>
+                <h5><strong>Despawn Range</strong></h5>
+                The following applies to all mobs.
+                <ul>
+                    <li>Soft cap: 32</li>
+                    <ul><li>Block radius from a player where mobs will randomly despawn over time.</li></ul>
+                    <li>Hard cap: 96</li>
+                    <ul><li>Block radius from a player where mobs will forcibly despawn.</li></ul>
+                </ul>
+                <br>
+                <h5><strong>Mob Limits</strong></h5>
+                The following is the maximum amount of entities that can exist an a given area.
+                <ul>
+                    <li>Animals / Friendly Mobs (same type)</li>
+                    <ul>
+                        <li>15 in 5 block radius.</li>
+                    </ul>
+                    <li>Villagers</li>
+                    <ul>
+                        <li>5 per chunk.</li>
+                    </ul>
+                    <li>Iron Golems</li>
+                    <ul>
+                        <li>10 per chunk.</li>
+                    </ul>
+                    <li>Wolves</li>
+                    <ul>
+                        <li>25 in 50 block radius.</li>
+                    </ul>
+                    <li>Hostile Mobs</li>
+                    <ul>
+                        <li>15 per chunk.</li>
+                    </ul>
+                    <li>Endermen</li>
+                    <ul>
+                        <li>10 per chunk.</li>
+                    </ul>
+                    <li>Warden</li>
+                    <ul>
+                        <li>5 in 50 block radius.</li>
+                    </ul>
+                </ul>
+                <br>
+                <br>
+                <h5><strong>Activation Range</strong></h5>
+                Entities outside of this range (block radius) will tick at a reduced rate.
+                <ul>
+                    <li>Animals: 8</li>
+                    <li>Monsters: 26</li>
+                    <li>Villagers: 16</li>
+                    <li>Raiders: 16</li>
+                </ul>
+                <br>
+                <br>
+                <h5><strong>View/Spawn Range</strong></h5>
+                Distances measured in chunk radius from the player.
+                <ul>
+                    <li>View distance: 9</li>
+                    <li>Simulation distance: 4</li>
+                    <ul><li>Any entity outside this radius will not be ticked by the server.</li></ul>
+                    <li>Mob spawn range: 3</li>
+                </ul>
+                <br>
+                <br>
+                <h2 id="skygrid3">Player Warps</h2>
+                <hr>
+                <p>Anyone has the ability to access player warps, however only Dragon and above have the ability to create a pwarp. VIPs have the ability to make up to 3.</p>
+                <table class="table command-table">
+                    <tr>
+                        <td>/pwarp</td>
+                        <td>Opens the Player Warp GUI.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp ban set/remove/list &lt;warp&gt; &lt;username&gt;</td>
+                        <td>Bans or unbans players from using your warps.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp category set &lt;warp&gt; farms/houses/other/shops</td>
+                        <td>Sets the category of your pwarp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp desc set/remove &lt;warp&gt; &lt;description&gt;</td>
+                        <td>Sets or removes the description for your warp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp help</td>
+                        <td>Shows additional pwarp commands.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp password set &lt;warp&gt; &lt;password&gt;</td>
+                        <td>Creates a password in order to access the warp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp rate &lt;warp&gt; &lt;rating&gt;</td>
+                        <td>Adds a rating to someone elses pwarp from 1-5.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp remove &lt;warp&gt;</td>
+                        <td>Removes the specified player warp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp rename &lt;warp&gt;</td>
+                        <td>Renames an existing warp.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp set &lt;name&gt;</td>
+                        <td>Creates a player warp at your location.</td>
+                    </tr>
+                    <tr>
+                        <td>/pwarp set icon &lt;warp&gt;</td>
+                        <td>Sets the icon for your warp.</td>
+                    </tr>
+                </table>
+                <p>PWarps will expire if the owner has not logged on for 100 days.</p>
+            </div>
+            <!-- ################################################ -->
+            <!-- CREATIVE START -->
+            <!-- ################################################ -->
+            <div class="tab-pane" id="creative" role="tabpanel" aria-labelledby="creative-tab">
+                <br>
+                <br>
+                <ol>
+                    <li><a href="#creative" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Plots</a></li>
+                    <li><a href="#creative2" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Misc</a></li>
+                </ol>
+                <br>
+                <br>
+                <h2 id="creative1">Plots</h2>
+                <hr>
+                <p>Players will be able to build anything while inside their designated plots.</p>
+                <ul>
+                    <li>Each player may claim 1 plot.</li>
+                    <li>The following items are not available:</li>
+                    <ul>
+                        <li>Minecarts</li>
+                        <li>Boats</li>
+                        <li>Spawners</li>
+                        <li>Ender Eyes</li>
+                        <li>Commands Blocks</li>
+                        <li>End Portal Blocks</li>
+                        <li>Gate Portal Blocks</li>
+                        <li>Nether Portals</li>
+                        <li>Spawn Eggs</li>
+                        <li>Maps</li>
+                        <li>Books</li>
+                        <li>Lecterns</li>
+                    </ul>
+                </ul>
+                <table class="table command-table">
+                    <tr>
+                        <td>/plot auto</td>
+                        <td>Automatically claims a plot within the occupied world.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot claim</td>
+                        <td>Claims a creative plot.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot clear</td>
+                        <td>Reverts back to an empty plot.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot download schem</td>
+                        <td>Allows plot owners to download a schematic of their plot.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot info</td>
+                        <td>See information on the plot.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot merge</td>
+                        <td>Merges with an adjacent plot.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot music</td>
+                        <td>Adds music to your plot.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot setbiome</td>
+                        <td>Change the biome in your plot.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot trust &lt;player&gt;</td>
+                        <td>Allows a player to build on your plot.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot unlink</td>
+                        <td>Reverts a previous /plot merge.</td>
+                    </tr>
+                    <tr>
+                        <td>/plot visit &lt;player&gt;</td>
+                        <td>Teleports you to a players plot.</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h2 id="creative2">Misc</h2>
+                <hr>
+                <table class="table command-table">
+                    <tr>
+                        <td>/pcreative</td>
+                        <td>Switch to creative gamemode.</td>
+                    </tr>
+                    <tr>
+                        <td>/psurvival</td>
+                        <td>Switch to survival gamemode.</td>
+                    </tr>
+                    <tr>
+                        <td>/brush</td>
+                        <td>Worldedit tool that&#39;s useful for terrain or large scale constructions.</td>
+                    </tr>
+                    <tr>
+                        <td>/skull &lt;player&gt;</td>
+                        <td>Gives or replaces the held skull with that of the inserted username.</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- ################################################ -->
+            <!-- VANILLA START -->
+            <!-- ################################################ -->
+            <div class="tab-pane" id="vanilla" role="tabpanel" aria-labelledby="vanilla-tab">
+                <br>
+                <br>
+                <p>This is the vanilla game, idk what to put here.</p>
+                <br>
+                <table class="table command-table">
+                    <tr>
+                        <td>alt + F4</td>
+                        <td>In case you spot another player.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- 3 Content End -->
+    
+    
+    <!-- 4 Footer Start -->
+    <div class="container-fluid footer">
+        <div class="container d-flex justify-content-center">
+            <div class="row">
+                <div class="col">
+                    <h5>Contact Us</h5>
+                    <br><strong>Email</strong>
+                    <br><span class="email">admin@budgienet.com</span>
+                    <br>
+                    <br><strong>Discord</strong>
+                    <br><a href="https://discord.gg/budgienetwork" target="_blank">discord.gg/budgienetwork</a>
+                </div>
+                <div class="col">
+                    <h5>Vote Sites</h5>
+                    <br><a href="https://budgienet.com/v1" target="_blank">budgienet.com/v1</a>
+                    <br><a href="https://budgienet.com/v2" target="_blank">budgienet.com/v2</a>
+                    <br><a href="https://budgienet.com/v3" target="_blank">budgienet.com/v3</a>
+                    <br><a href="https://budgienet.com/v4" target="_blank">budgienet.com/v4</a>
+                    <br><a href="https://budgienet.com/v5" target="_blank">budgienet.com/v5</a>
+                    <br><a href="https://budgienet.com/v6" target="_blank">budgienet.com/v6</a>
+                </div>
+                <div class="col">
+                    <h5>Direct IP's</h5>
+                    <br><strong>Budgie Survival</strong>
+                    <br><code>s1.budgie.network</code>
+                    <br><strong>Canary Survival</strong>
+                    <br><code>s2.budgie.network</code>
+                    <br><strong>Skyblock</strong>
+                    <br><code>skyblock.budgie.network</code>
+                    <br><strong>SkyGrid</strong>
+                    <br><code>skygrid.budgie.network</code>
+                </div>
+            </div>
+        </div>
+        <p class="container d-flex justify-content-center" style="padding-top:50px">
+            <a href="tos.html">Privacy Policy / Terms and Conditions</a>
+        </p>
+        <p class="container d-flex justify-content-center" style="padding-top:10px">
+            Copyright © BudgieNet 2024. All rights reserved.
+        </p>
+    </div>
+    <!-- 4 Footer End -->
+    </body>
+    
+    
+    <script src="gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
+    
+    </html>
