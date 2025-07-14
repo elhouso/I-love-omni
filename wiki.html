@@ -8,102 +8,157 @@
     <meta name="description" content="Omni World Wiki - Complete guide to commands, features, and gameplay mechanics">
     <meta name="keywords" content="Minecraft, Omni World, Wiki, Commands, Guide">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #4e73df;
-            --primary-dark: #3a5bc7;
-            --accent: #4e73df;
-            --dark: #1a2035;
-            --darker: #121420;
+        @font-face {
+            font-family: 'Expressway';
+            src: url('Expressway-SemiBold.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
         }
+        
+        :root {
+            --primary: #323339;
+            --primary-dark: #27282d;
+            --accent: #7ccbfb;
+            --dark: #25262b;
+            --darker: #1a1b1e;
+        }
+        
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Expressway', sans-serif;
             background-color: var(--darker);
             color: #e0e0e0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
+        
+        h1, h2, h3, h4, h5 {
+            font-weight: 600;
+            color: white;
+            line-height: 1.3;
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.5rem; }
+        h5 { font-size: 1.25rem; }
+        
         .header {
             background: var(--dark);
-            padding: 2rem 0;
-            border-bottom: 4px solid var(--primary);
+            padding: 2.5rem 0;
+            border-bottom: 4px solid var(--accent);
         }
+        
         .header-logo {
             text-align: center;
         }
+        
         .header-logo img {
-            height: 100px;
-            margin-bottom: 0.5rem;
+            height: 120px;
+            margin-bottom: 0.75rem;
         }
+        
         .navbar {
             background-color: var(--dark) !important;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
+        
         .nav-container {
             display: flex;
             justify-content: center;
             width: 100%;
         }
+        
         .navbar-nav {
             flex-direction: row;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
+        
         .nav-link {
             color: #d1d1d1 !important;
             font-weight: 600;
-            padding: 0.5rem 1.5rem !important;
-            transition: all 0.3s;
+            padding: 0.75rem 1.75rem !important;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
         }
+        
         .nav-link:hover, .nav-active {
-            color: white !important;
-            background: var(--primary);
-            border-radius: 5px;
+            color: var(--darker) !important;
+            background: var(--accent);
+            border-radius: 6px;
         }
         
         /* Wiki Content Styles */
         .wiki-container {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
         }
         
         .wiki-header {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1.5rem;
+            margin-bottom: 3rem;
         }
         
         .wiki-tabs {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .wiki-tabs .nav-link {
+            color: #d1d1d1 !important;
+            border: none;
+            border-radius: 6px 6px 0 0;
+            margin-right: 0.5rem;
+            padding: 0.75rem 1.5rem !important;
+        }
+        
+        .wiki-tabs .nav-link.active {
+            background-color: var(--accent) !important;
+            color: var(--darker) !important;
+            border-bottom: 2px solid var(--accent);
         }
         
         .wiki-section {
-            background-color: rgba(26, 32, 53, 0.8);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(78, 115, 223, 0.3);
+            background-color: rgba(37, 38, 43, 0.85);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(124, 203, 251, 0.4);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .wiki-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.5);
         }
         
         .command-table {
             width: 100%;
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 6px;
+            border-radius: 10px;
             overflow: hidden;
+            border-collapse: separate;
+            border-spacing: 0;
         }
         
         .command-table th {
-            background-color: var(--primary);
-            color: white;
-            padding: 0.75rem;
+            background-color: var(--accent);
+            color: var(--darker);
+            padding: 1rem;
             text-align: left;
+            font-weight: 600;
         }
         
         .command-table td {
-            padding: 0.75rem;
+            padding: 1rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             vertical-align: top;
         }
@@ -114,28 +169,36 @@
         
         .command-table code {
             background-color: rgba(0,0,0,0.3);
-            padding: 2px 4px;
-            border-radius: 3px;
-            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: 5px;
+            color: var(--accent);
             font-family: monospace;
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
         
         .toc {
-            background-color: rgba(26, 32, 53, 0.8);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(78, 115, 223, 0.3);
+            background-color: rgba(37, 38, 43, 0.85);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(124, 203, 251, 0.4);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
         .toc ol {
             padding-left: 1.5rem;
+            margin-bottom: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
         }
         
         .toc a {
-            color: var(--primary);
+            color: var(--accent);
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
         }
         
         .toc a:hover {
@@ -144,47 +207,138 @@
         }
         
         .tagline {
-            color: var(--primary);
-            font-size: 1.2rem;
+            color: var(--accent);
+            font-size: 1.3rem;
             letter-spacing: 1px;
             margin-top: -5px;
+            margin-bottom: 1rem !important;
         }
         
         .footer {
             background: var(--dark);
-            padding: 3rem 0 1rem;
-            border-top: 4px solid var(--primary);
+            padding: 3.5rem 0 1.5rem;
+            border-top: 4px solid var(--accent);
             text-align: center;
         }
         
-        h1, h2, h3, h4, h5 {
-            font-weight: 700;
-            color: white;
+        .footer .container > .row {
+            justify-content: center;
         }
         
-        h2 {
-            margin-top: 2rem;
-            color: var(--primary);
+        .footer .col {
+            max-width: 400px;
+        }
+        
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+            text-decoration: underline;
         }
         
         hr {
-            border-color: var(--primary);
+            border-color: var(--accent);
             opacity: 0.3;
+            margin: 1.5rem 0;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            color: #d1d1d1;
+        }
+        
+        /* Fluent design elements */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         /* Responsive adjustments */
-        @media (max-width: 768px) {
+        @media (max-width: 991.98px) {
             .navbar-nav {
                 flex-direction: column;
-                gap: 0;
+                gap: 0.5rem;
             }
             
             .nav-link {
                 padding: 0.5rem 1rem !important;
+                text-align: center;
+            }
+            
+            .header-logo img {
+                height: 90px;
             }
             
             .wiki-section {
-                padding: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .wiki-container {
+                margin: 2rem auto;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            body {
+                font-size: 1rem;
+            }
+            
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            h3 { font-size: 1.5rem; }
+            h4 { font-size: 1.25rem; }
+            
+            .header {
+                padding: 2rem 0;
+            }
+            
+            .header-logo img {
+                height: 80px;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .wiki-tabs .nav-link {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.95rem;
+            }
+            
+            .command-table th, 
+            .command-table td {
+                padding: 0.75rem;
+                font-size: 0.95rem;
+            }
+            
+            .command-table code {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .wiki-tabs {
+                overflow-x: auto;
+                display: block;
+                white-space: nowrap;
+            }
+            
+            .wiki-tabs .nav-item {
+                display: inline-block;
+                float: none;
+            }
+            
+            .command-table {
+                display: block;
+                overflow-x: auto;
             }
         }
     </style>
@@ -193,7 +347,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header fade-in">
         <div class="container">
             <div class="header-logo">
                 <img src="img/logo.png" alt="Omni World Logo">
@@ -203,7 +357,7 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top fade-in">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
@@ -228,7 +382,7 @@
 
     <!-- Wiki Content -->
     <main class="wiki-container">
-        <div class="wiki-header">
+        <div class="wiki-header fade-in">
             <h1>Omni World Wiki</h1>
             <p class="lead">Well documented guide to thriving in Omni World</p>
         </div>
@@ -256,7 +410,7 @@
         <div class="tab-content" id="wikiTabContent">
             <!-- Global Tab -->
             <div class="tab-pane fade show active" id="global" role="tabpanel" aria-labelledby="global-tab">
-                <div class="toc">
+                <div class="toc fade-in">
                     <h4>Table of Contents</h4>
                     <ol>
                         <li><a href="#voting">Placeholder text</a></li>
@@ -267,7 +421,7 @@
                     </ol>
                 </div>
                 
-                <div class="wiki-section" id="voting">
+                <div class="wiki-section fade-in" id="voting">
                     <h2>Placeholder text</h2>
                     <hr>
                     <p>Placeholder text</p>
@@ -301,7 +455,7 @@
                     </table>
                 </div>
                 
-                <div class="wiki-section" id="ranks">
+                <div class="wiki-section fade-in" id="ranks">
                     <h2>Placeholder text</h2>
                     <hr>
                     <p>Placeholder text</p>
@@ -322,7 +476,7 @@
                     </table>
                 </div>
                 
-                <div class="wiki-section" id="market">
+                <div class="wiki-section fade-in" id="market">
                     <h2>Placeholder text</h2>
                     <hr>
                     <p>Placeholder text</p>
@@ -352,7 +506,7 @@
                     </table>
                 </div>
                 
-                <div class="wiki-section" id="global-cmds">
+                <div class="wiki-section fade-in" id="global-cmds">
                     <h2>Placeholder text</h2>
                     <hr>
                     <p>Placeholder text</p>
@@ -385,7 +539,7 @@
                     </table>
                 </div>
                 
-                <div class="wiki-section" id="warps">
+                <div class="wiki-section fade-in" id="warps">
                     <h2>Placeholder text</h2>
                     <hr>
                     <p>Placeholder text</p>
@@ -870,7 +1024,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer fade-in">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-4 mb-4 mb-md-0">
@@ -895,7 +1049,7 @@
                     </ul>
                 </div>
             </div>
-            <hr class="my-4" style="border-color: var(--primary);">
+            <hr class="my-4" style="border-color: var(--accent);">
             <div class="text-center">
                 <p class="mb-0">© 2025 Omni World. All rights reserved.</p>
             </div>
@@ -903,5 +1057,42 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add fade-in animation to elements as they scroll into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                fadeInObserver.observe(el);
+            });
+            
+            // Activate the current tab based on hash
+            if (window.location.hash) {
+                const tabTrigger = document.querySelector(`[data-bs-target="${window.location.hash}"]`);
+                if (tabTrigger) {
+                    new bootstrap.Tab(tabTrigger).show();
+                }
+            }
+            
+            // Update hash when tabs are shown
+            document.querySelectorAll('#wikiTabs button').forEach(tab => {
+                tab.addEventListener('shown.bs.tab', event => {
+                    window.location.hash = event.target.getAttribute('data-bs-target');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
